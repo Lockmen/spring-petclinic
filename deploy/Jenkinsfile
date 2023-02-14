@@ -6,7 +6,8 @@ pipeline {
     }
     
     environment {
-      AWS_CREDENTIAL_ID = "257307634175"
+      AWS_CREDENTIAL_NAME = "AWSEcredential"
+      AWS_ACCOUNT_ID = "257307634175"
       REGION = "ap-northeast-2"
       DOCKER_IMAGE_NAME="aws02-spring-petclinic"
       DOCKER_TAG="1.0"
