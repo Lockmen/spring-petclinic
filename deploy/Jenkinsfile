@@ -1,44 +1,33 @@
 pipeline {
-  agent any
+    agent any
   
-  stages {
-    stage('Echo fatch'){
-      steps {
-        echo 'Git fatch'
-        git url: 'https://github.com/Lockmen/spring-petclinic.git/',
-          branch: main, credentialsId: 'gitCredential'
-        
+    stages {
+      stage('Git fatch') {
+        steps {
+          echo 'Git fatch'
+          git url: 'https://github.com/llllsssswwww/spring-petclinic.git/',
+              branch: 'main', credentialsId: 'gitCredential'
+      }
     }
-  }
-    
-
-  stage('Maven Build'){
-    steps {
-        echo 'Maven Build'
+      stage('Maven Build') {
+        steps {
+          echo 'Maven Build'
+      }
     }
-  }
-   
-  stages {
-    stage('Docker Image'){
-      steps {
-        echo 'Docker Image!!'
+      stage('Docker Image') {
+        steps {
+          echo 'Docker Image'
+      }
     }
-  }
-    
-    
- stages {
-    stage('Image push'){
-      steps {
-        echo 'Image push!!'
+      stage('Image Push') {
+        steps {
+          echo 'Image Push'
+      }
     }
+      stage('Codedeploy') {
+        steps {
+          echo 'Codedeploy'
+      }
+    }         
   }
-  stages {
-    stage('Codedeploy'){
-      steps {
-        echo 'Codedeploy!!'
-    }
-  }
-    
- }
-
-
+}
